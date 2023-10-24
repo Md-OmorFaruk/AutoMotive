@@ -1,7 +1,22 @@
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const DetailsProduct = ({ carInfo }) => {
       const { _id, photoURL, name, brandName, price, category, description, rating } = carInfo;
+      
+      const info = {
+               _id,
+               photoURL,
+               name,
+               brandName,
+               price,
+               category,
+               description,
+               rating,
+             };
+      console.log(info);
+
+      
       const handleUpdate = e => {
              e.preventDefault();
              const form = e.target;
@@ -11,19 +26,34 @@ const DetailsProduct = ({ carInfo }) => {
              const price = form.price.value;
              const category = form.category.value;
              const description = form.description.value;
-             const rating = form.rating.value;
+            const rating = form.rating.value;
 
-             const info = {
-               photoURL,
-               name,
-               brandName,
-               price,
-               category,
-               description,
-               rating,
-             };
-             console.log(info);
+            const allInformation = {
+              photoURL,
+              name,
+              brandName,
+              price,
+              category,
+              description,
+              rating
+            };
+
+
+       fetch(`http://localhost:5000/automotive/${_id}`, {
+         method: "PUT",
+         headers: {
+           "content-type": "application/json",
+         },
+         body: JSON.stringify(allInformation),
+       })
+         .then((res) => res.json())
+         .then((data) => {
+               console.log( data);
+               Swal.fire("Update successful");
+         });
       }
+      
+      
       
       return (
         <div className="max-w-screen-xl mx-auto">

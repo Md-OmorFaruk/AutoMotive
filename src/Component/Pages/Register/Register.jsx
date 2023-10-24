@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
       const [error, setError] = useState(null);
@@ -36,7 +37,8 @@ const Register = () => {
                   .then(result => {
                         console.log(result.user);
                         setError(null)
-                        setSuccess("Registered Successful")
+                    setSuccess("Registered Successful")
+                     Swal.fire("Register successful");
 
                   })
                   .catch(error => {

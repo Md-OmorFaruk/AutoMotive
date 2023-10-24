@@ -7,7 +7,7 @@ const LambrghiniDetails = ({ details }) => {
 
   return (
     <div>
-      <div className="bg-base-100 shadow-inner shadow-sky-400 rounded-xl md:grid grid-cols-5 items-center justify-center pb-5 md:pb-0 mt-16 lg:mt-10">
+      <div className="bg-base-200  shadow-sky-400 shadow-inner rounded-xl md:grid grid-cols-5 items-center justify-center pb-5 md:pb-0 mt-16 lg:mt-10">
         <div className="col-span-2 card w-full">
           <figure>
             <img
@@ -54,11 +54,11 @@ const LambrghiniDetails = ({ details }) => {
 
           <Link to={`/updateProduct/${_id}`}>
             {" "}
-            <div className="card-actions justify-center w-full bg-red-500 hover:bg-red-600 mt-5 py-3 rounded-xl">
+            <div className="card-actions justify-center w-full bg-white hover:bg-gray-200 mt-5 py-3 rounded-xl">
               <button className=" text-black font-extrabold">Update</button>
             </div>
           </Link>
-          <Link to={`/productDetails/${_id}`} >
+          <Link to={`/productDetails/${_id}`}>
             {/* to={`/productDetails/${_id}`} */}
             {/* to={`/automotive/${_id}`} */}
             <div className="card-actions bg-sky-400 hover:bg-sky-500 justify-center mt-2 py-3 rounded-xl">

@@ -12,7 +12,7 @@ import card3 from '../../../images/benz.jpg'
 import card4 from '../../../images/bmw.jpg'
 import card5 from '../../../images/ford.jpg'
 import card6 from '../../../images/poche.jpg'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link }  from 'react-router-dom'
 const HeroSection = () => {
   return (
     <div>

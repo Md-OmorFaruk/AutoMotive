@@ -1,6 +1,7 @@
 import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const AllDetails = ({ car }) => {
-      const { photoURL, name, brandName, price, category, description, rating } = car;
+      const {_id, photoURL, name, brandName, price, category, description, rating } = car;
       return (
         <div>
           <div className="bg-base-100  md:grid grid-cols-5 items-center gap-16 ">
@@ -35,9 +36,11 @@ const AllDetails = ({ car }) => {
                 </p>{" "}
                 <AiFillStar className="text-yellow-300 text-2xl" />
               </div>
-              <button className=" text-black font-extrabold bg-sky-400 hover:bg-sky-600 w-full py-3 rounded-xl mt-5">
-                Add To Cart
-              </button>
+              <Link to={`/addToCart/${_id}`}>
+                <button className=" text-black font-extrabold bg-sky-400 hover:bg-sky-600 w-full py-3 rounded-xl mt-5">
+                  Add To Cart
+                </button>
+              </Link>
             </div>
           </div>
           <div>

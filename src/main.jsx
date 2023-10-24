@@ -18,7 +18,6 @@ import Porsche from "./Component/BrandPages/Porsche/Porsche";
 import Lamborghini from "./Component/BrandPages/Lamborghini/Lamborghini";
 import Benz from "./Component/BrandPages/Benz/Benz";
 import Tesla from "./Component/BrandPages/Tesla/Tesla";
-import HeroSection from "./Component/Pages/HeroSection/HeroSection";
 import UpdateProduct from "./Component/Pages/AddToCart/UpdateProduct";
 import ProductDetails from "./Component/ProductDetails/ProductDetails";
 const router = createBrowserRouter([
@@ -42,11 +41,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/addToCart",
-        element: (
-          <PrivateRoute>
-            <AddToCart></AddToCart>
-          </PrivateRoute>
-        ),
+        element: <AddToCart></AddToCart>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/automotive/${params.id}`),
       },
       {
         path: "/logIn",
@@ -89,7 +86,8 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <UpdateProduct></UpdateProduct>,
-        loader:({params})=>fetch(`http://localhost:5000/automotive/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/automotive/${params.id}`),
       },
       {
         path: "/productDetails/:id",

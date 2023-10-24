@@ -29,8 +29,8 @@ const AddProduct = () => {
                     console.log(data);
                     if (data.insertedId) {
                         Swal.fire({
-                          position: "top",
-                          background: " #48d6d2",
+                          position: "center",
+                          background: "#000000",
                           icon: "success",
                           title: "Added Successful",
                           showConfirmButton: false,
