@@ -7,17 +7,17 @@ const LambrghiniDetails = ({ details }) => {
 
   return (
     <div>
-      <div className="bg-base-100 shadow-xl shadow-black rounded-xl md:grid grid-cols-5 items-center justify-center ">
-        <div className="col-span-2 ">
+      <div className="bg-base-100 shadow-inner shadow-sky-400 rounded-xl md:grid grid-cols-5 items-center justify-center pb-5 md:pb-0 mt-16 lg:mt-10">
+        <div className="col-span-2 card w-full">
           <figure>
             <img
-              className=" h-[420px] object-cover rounded-xl transition-transform duration-300 ease-out hover:scale-105"
+              className=" h-[480px] w-full object-cover rounded-xl p-8 md:p-0 transition-transform duration-300 ease-out hover:scale-125"
               src={photoURL}
               alt="Movie"
             />
           </figure>
         </div>
-        <div className="pl-5 pr-5 col-span-3">
+        <div className="pl-5 pr-5 pt-12 md:pt-0 mb-12 md:mb-0 col-span-3 ">
           <h2 className="card-title font-font3 text-base text-white">
             <span className="text-sky-400">Name:</span> {name}
           </h2>
@@ -49,27 +49,24 @@ const LambrghiniDetails = ({ details }) => {
               <span className="font-font3 text-sky-400 text-base">Rating:</span>{" "}
               {rating}
             </p>{" "}
-            <AiFillStar className="text-orange-600 text-2xl" />
+            <AiFillStar className="text-yellow-300 text-2xl" />
           </div>
 
-          <div className="flex justify-between mt-5 font-font1 ">
-            <div className="card-actions ">
-              <Link to="/updateProduct">
-                {" "}
-                <button className="btn btn-primary bg-sky-400 hover:bg-sky-500 text-black font-extrabold">
-                  Update
-                </button>
-              </Link>
+          <Link to={`/productDetails/${_id}`}>
+            {" "}
+            <div className="card-actions justify-center w-full bg-red-500 hover:bg-red-600 mt-5 py-3 rounded-xl">
+              <button className=" text-black font-extrabold">Update</button>
             </div>
-            <div className="card-actions">
-              <Link to={`/${brandName}/${_id}`}>
-                {" "}
-                <button className="btn bg-sky-400 hover:bg-sky-500 text-black font-extrabold">
-                  Full Details
-                </button>
-              </Link>
+          </Link>
+          <Link to={`/productDetails/${_id}`} >
+            {/* to={`/productDetails/${_id}`} */}
+            {/* to={`/automotive/${_id}`} */}
+            <div className="card-actions bg-sky-400 hover:bg-sky-500 justify-center mt-2 py-3 rounded-xl">
+              <button className=" text-black font-extrabold">
+                Full Details
+              </button>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

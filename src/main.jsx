@@ -20,6 +20,7 @@ import Benz from "./Component/BrandPages/Benz/Benz";
 import Tesla from "./Component/BrandPages/Tesla/Tesla";
 import HeroSection from "./Component/Pages/HeroSection/HeroSection";
 import UpdateProduct from "./Component/Pages/AddToCart/UpdateProduct";
+import ProductDetails from "./Component/ProductDetails/ProductDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
 
       {
         path: "/addProduct",
-        element: <AddProduct></AddProduct>,
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addToCart",
@@ -50,7 +55,6 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
-        
       },
       {
         path: "/bmw",
@@ -84,8 +88,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateProduct",
-        element:<UpdateProduct></UpdateProduct>
-      }
+        element: <UpdateProduct></UpdateProduct>,
+      },
+      {
+        path: "/productDetails/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader:({params}) => fetch(`http://localhost:5000/automotive/${params.id}`)
+      },
     ],
   },
 ]);

@@ -209,7 +209,7 @@ const HeroSection = () => {
             <img
               src={card1}
               alt="Shoes"
-              className="rounded-xl h-[300px] object-cover w-full  transition-transform duration-300 ease-out hover:scale-110"
+              className="rounded-xl h-[300px] object-cover w-full transition-transform duration-300 ease-out hover:scale-110"
             />
           </figure>
           <div className="card-body items-center text-center">

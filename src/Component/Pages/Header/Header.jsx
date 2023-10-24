@@ -263,11 +263,17 @@ const Header = () => {
             ) : (
               <>
                 <>
-                  <img
+                    {
+                      user.photoURL? <img
+                    src={user.photoURL}
+                    alt=""
+                    className="rounded-full w-10 mr-2"
+                  />:<img
                     src={avatar}
                     alt=""
                     className="rounded-full w-10 mr-2"
                   />
+                  }
                   <p className="btn uppercase font-bold font-fon1 bg-sky-900 text-white items-center text-center ">
                     {user.email}
                   </p>

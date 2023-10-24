@@ -26,18 +26,19 @@ const UpdateProduct = () => {
             </Link>
             <form
               onSubmit={handleUpdateProduct}
-              className="bg-base-200 shadow-lg shadow-sky-400 max-w-6xl mx-auto p-16 mt-16 mb-20 rounded-xl"
+              className="bg-base-200 shadow-lg shadow-yellow-300 max-w-6xl mx-auto p-16 mt-16 mb-20 rounded-xl"
             >
               <div className="max-w-3xl mx-auto mb-10">
                 <h1 className="text-center text-sky-400 font-font3 text-3xl mb-5">
                   Update Product
                 </h1>
                 <p className="text-center font-font3 text-sm">
-                  Discover our newest arrivals on the homepage, where innovation
-                  meets style. From cutting-edge technology to timeless designs,
-                  dive into a world of possibilities and elevate your driving
-                  experience with our latest products. Welcome to a showcase of
-                  automotive excellence, right at your fingertips.
+                  Keeping your car details current helps us provide you with
+                  tailored recommendations, from maintenance tips to compatible
+                  accessories. Get advice that's specific to your ride!hare your
+                  car's specifications, modifications, and experiences with
+                  fellow enthusiasts. Engage in discussions, exchange ideas, and
+                  celebrate your love for cars together.
                 </p>
               </div>
 

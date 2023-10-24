@@ -54,7 +54,7 @@ const Lamborghini = () => {
          <h1 className="text-5xl font-bold font-font3 text-center text-sky-400">
            Lamborghini
          </h1>
-         <div className="md:grid grid-cols-2 gap-14 mt-10">
+         <div className="md:grid lg:grid-cols-2 gap-10 mt-10">
            {filteredCars.map((details) => (
              <LambrghiniDetails
                key={details._id}
