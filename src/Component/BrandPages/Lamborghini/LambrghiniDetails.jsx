@@ -52,7 +52,7 @@ const LambrghiniDetails = ({ details }) => {
             <AiFillStar className="text-yellow-300 text-2xl" />
           </div>
 
-          <Link to={`/productDetails/${_id}`}>
+          <Link to={`/updateProduct/${_id}`}>
             {" "}
             <div className="card-actions justify-center w-full bg-red-500 hover:bg-red-600 mt-5 py-3 rounded-xl">
               <button className=" text-black font-extrabold">Update</button>

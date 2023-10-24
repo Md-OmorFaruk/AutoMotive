@@ -204,7 +204,7 @@ const HeroSection = () => {
 
       {/* Card */}
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
-        <div className="card w-full bg-base-200 shadow-md shadow-sky-400">
+         <Link to="/lamborghini"><div className="card w-full bg-base-200 shadow-md shadow-sky-400">
           <figure className="">
             <img
               src={card1}
@@ -218,16 +218,17 @@ const HeroSection = () => {
             </h2>
 
             <div className="card-actions">
-              <Link to="/lamborghini">
+             
                 {" "}
                 <button className="btn btn-primary text-xs mt-3 bg-sky-400 hover:bg-sky-300 text-black font-font3 fon-bold transition-transform duration-300 ease-out hover:scale-110">
                   Explore More
                 </button>
-              </Link>
+             
             </div>
           </div>
-        </div>
-        <div className="card w-full bg-base-200 shadow-md shadow-sky-400">
+        </div> </Link>
+        
+            <Link to="/tesla"><div className="card w-full bg-base-200 shadow-md shadow-sky-400">
           <figure className="">
             <img
               src={card2}
@@ -240,16 +241,15 @@ const HeroSection = () => {
               Brand : <span className="text-sky-500">Tesla</span>
             </h2>
 
-            <Link to="/tesla">
               <div className="card-actions">
                 <button className="btn btn-primary text-xs mt-3 bg-sky-400 hover:bg-sky-300 text-black font-font3 fon-bold transition-transform duration-300 ease-out hover:scale-110">
                   Explore More
                 </button>
               </div>
-            </Link>
+           
           </div>
-        </div>
-        <div className="card w-full bg-base-200 shadow-md shadow-sky-400">
+        </div> </Link>
+          <Link to="/benz"><div className="card w-full bg-base-200 shadow-md shadow-sky-400">
           <figure className="">
             <img
               src={card3}
@@ -263,15 +263,15 @@ const HeroSection = () => {
             </h2>
 
             <div className="card-actions">
-              <Link to="/benz">
+            
                 <button className="btn btn-primary text-xs mt-3 bg-sky-400 hover:bg-sky-300 text-black font-font3 fon-bold transition-transform duration-300 ease-out hover:scale-110">
                   Explore More
                 </button>
-              </Link>
+            
             </div>
           </div>
-        </div>
-        <div className="card w-full bg-base-200 shadow-md shadow-sky-400">
+        </div>  </Link>
+          <Link to="bmw"><div className="card w-full bg-base-200 shadow-md shadow-sky-400">
           <figure className="">
             <img
               src={card4}
@@ -285,16 +285,16 @@ const HeroSection = () => {
             </h2>
 
             <div className="card-actions">
-              <Link to="bmw">
+            
                 {" "}
                 <button className="btn btn-primary text-xs mt-3 bg-sky-400 hover:bg-sky-300 text-black font-font3 fon-bold transition-transform duration-300 ease-out hover:scale-110">
                   Explore More
                 </button>
-              </Link>
+             
             </div>
           </div>
-        </div>
-        <div className="card w-full bg-base-200 shadow-md shadow-sky-400">
+        </div> </Link>
+         <Link to="/ford"><div className="card w-full bg-base-200 shadow-md shadow-sky-400">
           <figure className="">
             <img
               src={card5}
@@ -308,16 +308,16 @@ const HeroSection = () => {
             </h2>
 
             <div className="card-actions">
-              <Link to="/ford">
+             
                 {" "}
                 <button className="btn btn-primary text-xs mt-3 bg-sky-400 hover:bg-sky-300 text-black font-font3 fon-bold transition-transform duration-300 ease-out hover:scale-110">
                   Explore More
                 </button>
-              </Link>
+             
             </div>
           </div>
-        </div>
-        <div className="card w-full bg-base-200 shadow-md shadow-sky-400">
+        </div> </Link>
+         <Link to="/porsche"><div className="card w-full bg-base-200 shadow-md shadow-sky-400">
           <figure className="">
             <img
               src={card6}
@@ -331,14 +331,14 @@ const HeroSection = () => {
             </h2>
 
             <div className="card-actions">
-              <Link to="/porsche">
+             
                 <button className="btn btn-primary text-xs mt-3 bg-sky-400 hover:bg-sky-300 text-black font-font3 fon-bold transition-transform duration-300 ease-out hover:scale-110">
                   Explore More
                 </button>
-              </Link>
+              
             </div>
           </div>
-        </div>
+        </div></Link>
       </div>
       <div className="max-w-7xl mx-auto mb-32 p-8 lg:p-0 ">
         <h1 className="text-xl font-bold font-font2 text-center mt-36">

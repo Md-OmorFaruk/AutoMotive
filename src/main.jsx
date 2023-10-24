@@ -87,13 +87,19 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/automotive"),
       },
       {
-        path: "/updateProduct",
+        path: "/updateProduct/:id",
         element: <UpdateProduct></UpdateProduct>,
+        loader:({params})=>fetch(`http://localhost:5000/automotive/${params.id}`),
       },
       {
         path: "/productDetails/:id",
-        element: <ProductDetails></ProductDetails>,
-        loader:({params}) => fetch(`http://localhost:5000/automotive/${params.id}`)
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/automotive/${params.id}`),
       },
     ],
   },
