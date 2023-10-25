@@ -25,13 +25,12 @@ const CartDetails = ({ cart }) => {
       console.log(_id)
       if (result.isConfirmed) {
         fetch(`http://localhost:5000/cart/${_id}`, {
-          method: 'Delete'
-        },)
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-          if(data.deleteCount>0)
-           {
+            if (data.deleteCount > 0) {
               Swal.fire("Deleted!", "Your cart has been deleted.", "success");
             }
           });
