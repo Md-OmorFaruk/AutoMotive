@@ -12,34 +12,38 @@ const CartDetails = ({ cart }) => {
        rating,
   } = cart;
   
-  const handlePayment = () => {
-    Swal.fire("Payment Successful , Car will be arrived your home in 3 days");
-   
-  }
   const handleDelete = _id => {
-    // Swal.fire({
-    //   title: "Are you sure?",
-    //   text: "You won't be able to revert this!",
-    //   icon: "warning",
-    //   showCancelButton: true,
-    //   confirmButtonColor: "#3085d6",
-    //   cancelButtonColor: "#d33",
-    //   confirmButtonText: "Yes, delete it!",
-    // }).then((result) => {
-       console.log(_id)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      console.log(_id)
+      if (result.isConfirmed) {
         fetch(`http://localhost:5000/cart/${_id}`, {
           method: 'Delete'
-        })
+        },)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            // if (result.isConfirmed) {
-            //   Swal.fire("Deleted!", "Your cart has been deleted.", "success");
-            // }
+          if(data.deleteCount>0)
+           {
+              Swal.fire("Deleted!", "Your cart has been deleted.", "success");
+            }
           });
+      }
     
-    // });
+      
+    
+    });
   }
+  const handlePayment = () => {
+    Swal.fire("Payment Successful , Car will be arrived your home in 3 days");
+  };
       return (
         <div>
           <div className="card w-full h-[550px] bg-base-200 shadow-xl shadow-white">
