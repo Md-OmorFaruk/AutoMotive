@@ -249,7 +249,11 @@ const Header = () => {
           {user ? (
             user.displayName ? (
               <>
-                <img src={user.photoURL} alt="" className="rounded-full w-10 mr-2" />
+                <img
+                  src={user.photoURL}
+                  alt=""
+                  className="rounded-full w-10 mr-2"
+                />
                 <p className="btn uppercase font-bold font-fon1 bg-sky-900 text-white items-center text-center ">
                   {user.displayName}
                 </p>
@@ -263,17 +267,19 @@ const Header = () => {
             ) : (
               <>
                 <>
-                    {
-                      user.photoURL? <img
-                    src={user.photoURL}
-                    alt=""
-                    className="rounded-full w-10 mr-2"
-                  />:<img
-                    src={avatar}
-                    alt=""
-                    className="rounded-full w-10 mr-2"
-                  />
-                  }
+                  {user.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt=""
+                      className="rounded-full w-10 mr-2"
+                    />
+                  ) : (
+                    <img
+                      src={avatar}
+                      alt=""
+                      className="rounded-full w-10 mr-2"
+                    />
+                  )}
                   <p className="btn uppercase font-bold font-fon1 bg-sky-900 text-white items-center text-center ">
                     {user.email}
                   </p>
@@ -294,7 +300,7 @@ const Header = () => {
                   color: isActive ? "#000000" : "#FFFFFF",
                   background: isActive ? "#00C1DE" : "#1D232A",
                 })}
-                className="btn uppercase font-bold font-fon1 text-black items-center text-center "
+                className="btn uppercase font-bold font-fon1 text-black items-center  text-center"
               >
                 Sign in
               </NavLink>

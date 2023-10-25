@@ -1,7 +1,46 @@
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const AllDetails = ({ car }) => {
-      const {_id, photoURL, name, brandName, price, category, description, rating } = car;
+
+  const { _id, photoURL, name, brandName, price, category, description, rating } = car;
+
+ 
+  const handleCart = () => {
+  
+        const cartInfo = {
+          _id,
+          photoURL,
+          name,
+          brandName,
+          price,
+          category,
+          description,
+          rating,
+    };
+    console.log(cartInfo);
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            background: "#000000",
+            icon: "success",
+            title: "Added Successful",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+      }
       return (
         <div>
           <div className="bg-base-100  md:grid grid-cols-5 items-center gap-16 ">
@@ -36,11 +75,11 @@ const AllDetails = ({ car }) => {
                 </p>{" "}
                 <AiFillStar className="text-yellow-300 text-2xl" />
               </div>
-              <Link to={`/addToCart/${_id}`}>
-                <button className=" text-black font-extrabold bg-sky-400 hover:bg-sky-600 w-full py-3 rounded-xl mt-5">
+              {/* <Link to={`/addToCart/${_id}`}> */}
+                <button onClick={handleCart}  className=" text-black font-extrabold bg-sky-400 hover:bg-sky-600 w-full py-3 rounded-xl mt-5">
                   Add To Cart
                 </button>
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
           <div>
@@ -62,4 +101,4 @@ const AllDetails = ({ car }) => {
       );
 };
 
-export default AllDetails;
+export default AllDetails ;
